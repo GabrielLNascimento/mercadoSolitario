@@ -1,0 +1,13 @@
+quero criar um projeto novo usando react + typescript no front e typescript no back
+A ideia é ser um mercado solidário
+
+por enquanto crie apenas o projeto, a estrutura dele
+- quero q separe em duas pastas de frontend e backend
+- quero que o banco de dados seja do neon
+- crie apenas uma pagina para cadastrar produtos
+- Crie um menu com uma opção "estoque" que mostre todos os produtos cadastrados
+
+
+-------------------------------------------
+
+

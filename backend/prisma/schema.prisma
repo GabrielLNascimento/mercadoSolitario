@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Familia {
+  id               Int      @id @default(autoincrement())
+  nomePai          String
+  dataNascPai      DateTime?
+  nomeMae          String
+  dataNascMae      DateTime?
+  endereco         String?
+  telefone         String?
+  criadoEm         DateTime @default(now())
+  atualizadoEm     DateTime @updatedAt
+  filhos           Filho[]
+  compras          Compra[]
+
+  @@map("familias")
+}
+
+model Filho {
+  id        Int     @id @default(autoincrement())
+  nome      String
+  familiaId Int
+  familia   Familia @relation(fields: [familiaId], references: [id])
+
+  @@map("filhos")
+}
+
+model Produto {
+  id           Int          @id @default(autoincrement())
+  nome         String
+  quantidade   Int
+  preco        Float
+  categoria    String?
+  criadoEm     DateTime     @default(now())
+  atualizadoEm DateTime     @updatedAt
+  itensCompra  ItemCompra[]
+
+  @@map("produtos")
+}
+
+model Compra {
+  id        Int          @id @default(autoincrement())
+  familia   Familia      @relation(fields: [familiaId], references: [id])
+  familiaId Int
+  itens     ItemCompra[]
+  criadoEm  DateTime     @default(now())
+
+  @@map("compras")
+}
+
+model ItemCompra {
+  id        Int     @id @default(autoincrement())
+  compra    Compra  @relation(fields: [compraId], references: [id])
+  compraId  Int
+  produto   Produto @relation(fields: [produtoId], references: [id])
+  produtoId Int
+  quantidade Int
+
+  @@map("itens_compra")
+}

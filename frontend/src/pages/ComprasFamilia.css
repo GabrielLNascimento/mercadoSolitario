@@ -1,0 +1,171 @@
+.pagina-compras {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.pagina-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.header-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagina-compras h1 {
+  font-size: 1.6rem;
+  color: #2d6a4f;
+  margin: 0;
+}
+
+.btn-voltar {
+  background: none;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-voltar:hover {
+  background-color: #f3f4f6;
+}
+
+.btn-novo {
+  padding: 0.5rem 1rem;
+  background-color: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-novo:hover {
+  background-color: #1b4332;
+}
+
+.info {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.lista-compras {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-compra {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.card-compra-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.compra-data {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.card-compra-acoes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compra-itens-count {
+  font-size: 0.8rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+
+.btn-editar-compra {
+  background: none;
+  border: 1px solid #95d5b2;
+  color: #2d6a4f;
+  border-radius: 5px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-editar-compra:hover {
+  background-color: #2d6a4f;
+  color: #fff;
+}
+
+.btn-deletar-compra {
+  background: none;
+  border: 1px solid #fca5a5;
+  color: #ef4444;
+  border-radius: 5px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-deletar-compra:hover {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.compra-itens {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.compra-itens li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #374151;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.compra-itens li:last-child {
+  border-bottom: none;
+}
+
+.item-qtd {
+  font-weight: 600;
+  color: #2d6a4f;
+}
+
+.compra-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid #e5e7eb;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #111827;
+}

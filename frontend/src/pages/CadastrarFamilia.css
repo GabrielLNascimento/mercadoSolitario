@@ -1,0 +1,188 @@
+.pagina-familia {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.pagina-familia h1 {
+  font-size: 1.6rem;
+  color: #2d6a4f;
+  margin-bottom: 1.5rem;
+}
+
+.alerta {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.alerta.sucesso {
+  background-color: #d8f3dc;
+  color: #1b4332;
+  border: 1px solid #95d5b2;
+}
+
+.alerta.erro {
+  background-color: #ffe0e0;
+  color: #7f1d1d;
+  border: 1px solid #fca5a5;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.campo input,
+.campo select {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #111827;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: #2d6a4f;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+.linha-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.secao-titulo-bloco {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-top: 0.25rem;
+}
+
+.secao-filhos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #f9fafb;
+}
+
+.secao-filhos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.secao-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.lista-filhos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filho-linha {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filho-linha input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #111827;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.filho-linha input:focus {
+  outline: none;
+  border-color: #2d6a4f;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+.btn-adicionar {
+  background: none;
+  border: 1px dashed #2d6a4f;
+  color: #2d6a4f;
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-adicionar:hover {
+  background-color: #d8f3dc;
+}
+
+.btn-remover {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.btn-remover:hover {
+  color: #ef4444;
+  background-color: #fee2e2;
+}
+
+button[type='submit'] {
+  margin-top: 0.5rem;
+  padding: 0.7rem;
+  background-color: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type='submit']:hover:not(:disabled) {
+  background-color: #1b4332;
+}
+
+button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
