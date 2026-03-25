@@ -34,16 +34,36 @@ model Filho {
 }
 
 model Produto {
-  id           Int          @id @default(autoincrement())
+  id           Int           @id @default(autoincrement())
   nome         String
   quantidade   Int
   preco        Float
   categoria    String?
-  criadoEm     DateTime     @default(now())
-  atualizadoEm DateTime     @updatedAt
+  criadoEm     DateTime      @default(now())
+  atualizadoEm DateTime      @updatedAt
   itensCompra  ItemCompra[]
+  itensEntrada ItemEntrada[]
 
   @@map("produtos")
+}
+
+model Entrada {
+  id        Int           @id @default(autoincrement())
+  itens     ItemEntrada[]
+  criadoEm  DateTime      @default(now())
+
+  @@map("entradas")
+}
+
+model ItemEntrada {
+  id        Int     @id @default(autoincrement())
+  entrada   Entrada @relation(fields: [entradaId], references: [id])
+  entradaId Int
+  produto   Produto @relation(fields: [produtoId], references: [id])
+  produtoId Int
+  quantidade Int
+
+  @@map("itens_entrada")
 }
 
 model Compra {

@@ -75,6 +75,9 @@ export async function editarProduto(req: Request, res: Response) {
 
 export async function deletarProduto(req: Request, res: Response) {
   const id = Number(req.params.id)
-  await prisma.produto.delete({ where: { id } })
+  await prisma.$transaction([
+    prisma.itemEntrada.deleteMany({ where: { produtoId: id } }),
+    prisma.produto.delete({ where: { id } }),
+  ])
   res.status(204).send()
 }

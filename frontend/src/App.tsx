@@ -9,6 +9,8 @@ import NovaCompra from './pages/NovaCompra'
 import EditarCompra from './pages/EditarCompra'
 import Estoque from './pages/Estoque'
 import EditarProduto from './pages/EditarProduto'
+import Entradas from './pages/Entradas'
+import NovaEntrada from './pages/NovaEntrada'
 import './App.css'
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route path="/familias/:familiaId/compras/:compraId/editar" element={<EditarCompra />} />
           <Route path="/estoque" element={<Estoque />} />
           <Route path="/estoque/:id/editar" element={<EditarProduto />} />
+          <Route path="/entradas" element={<Entradas />} />
+          <Route path="/entradas/nova" element={<NovaEntrada />} />
         </Routes>
       </main>
     </div>

@@ -18,6 +18,11 @@ export default function Menu() {
             Estoque
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/entradas" className={({ isActive }) => isActive ? 'ativo' : ''}>
+            Entradas
+          </NavLink>
+        </li>
       </ul>
     </nav>
   )
