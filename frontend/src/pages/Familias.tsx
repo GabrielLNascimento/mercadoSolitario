@@ -68,6 +68,7 @@ export default function Familias() {
                   <td>{f.nomeMae}</td>
                   <td className="acoes-col">
                     <button className="btn-compras" onClick={() => navigate(`/familias/${f.id}/compras`)}>Compras</button>
+                    <button className="btn-editar" onClick={() => navigate(`/familias/${f.id}/editar`)}>Editar</button>
                     <button className="btn-deletar" onClick={() => deletar(f.id)}>Excluir</button>
                   </td>
                 </tr>

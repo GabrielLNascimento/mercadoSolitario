@@ -11,6 +11,7 @@ import Estoque from './pages/Estoque'
 import EditarProduto from './pages/EditarProduto'
 import Entradas from './pages/Entradas'
 import NovaEntrada from './pages/NovaEntrada'
+import EditarFamilia from './pages/EditarFamilia'
 import './App.css'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/cadastrar" element={<CadastrarProduto />} />
           <Route path="/familias/cadastrar" element={<CadastrarFamilia />} />
           <Route path="/familias" element={<Familias />} />
+          <Route path="/familias/:id/editar" element={<EditarFamilia />} />
           <Route path="/familias/:familiaId/compras" element={<ComprasFamilia />} />
           <Route path="/familias/:familiaId/compras/nova" element={<NovaCompra />} />
           <Route path="/familias/:familiaId/compras/:compraId/editar" element={<EditarCompra />} />

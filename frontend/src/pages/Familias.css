@@ -103,6 +103,22 @@
   align-items: center;
 }
 
+.btn-editar {
+  background: none;
+  border: 1px solid #93c5fd;
+  color: #2563eb;
+  border-radius: 5px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-editar:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
 .btn-compras {
   background: none;
   border: 1px solid #95d5b2;
