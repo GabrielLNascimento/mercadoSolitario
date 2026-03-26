@@ -13,6 +13,8 @@ interface Produto {
 
 export default function Estoque() {
   const [produtos, setProdutos] = useState<Produto[]>([])
+  const [busca, setBusca] = useState('')
+  const [categoriaFiltro, setCategoriaFiltro] = useState('')
   const [carregando, setCarregando] = useState(true)
   const [erro, setErro] = useState('')
   const navigate = useNavigate()
@@ -51,6 +53,14 @@ export default function Estoque() {
   const formatarPreco = (preco: number) =>
     preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 
+  const categorias = Array.from(new Set(produtos.map((p) => p.categoria).filter(Boolean))) as string[]
+
+  const produtosFiltrados = produtos.filter((p) => {
+    const buscaOk = p.nome.toLowerCase().includes(busca.toLowerCase())
+    const categoriaOk = categoriaFiltro === '' || p.categoria === categoriaFiltro
+    return buscaOk && categoriaOk
+  })
+
   return (
     <div className="pagina-estoque">
       <div className="pagina-header">
@@ -60,6 +70,32 @@ export default function Estoque() {
         </button>
       </div>
 
+      <input
+        className="input-busca"
+        type="text"
+        placeholder="Pesquisar por nome..."
+        value={busca}
+        onChange={(e) => setBusca(e.target.value)}
+      />
+
+      <div className="filtro-categorias">
+        <button
+          className={`filtro-btn ${categoriaFiltro === '' ? 'ativo' : ''}`}
+          onClick={() => setCategoriaFiltro('')}
+        >
+          Todas
+        </button>
+        {categorias.map((cat) => (
+          <button
+            key={cat}
+            className={`filtro-btn ${categoriaFiltro === cat ? 'ativo' : ''}`}
+            onClick={() => setCategoriaFiltro(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
       {carregando && <p className="info">Carregando produtos...</p>}
       {erro && <p className="alerta erro">{erro}</p>}
 
@@ -67,7 +103,11 @@ export default function Estoque() {
         <p className="info">Nenhum produto cadastrado ainda.</p>
       )}
 
-      {!carregando && produtos.length > 0 && (
+      {!carregando && produtos.length > 0 && produtosFiltrados.length === 0 && (
+        <p className="info">Nenhum produto encontrado para "{busca}".</p>
+      )}
+
+      {!carregando && produtosFiltrados.length > 0 && (
         <div className="tabela-container">
           <table className="tabela">
             <thead>
@@ -81,7 +121,7 @@ export default function Estoque() {
               </tr>
             </thead>
             <tbody>
-              {produtos.map((p) => (
+              {produtosFiltrados.map((p) => (
                 <tr key={p.id}>
                   <td>{p.id}</td>
                   <td><strong>{p.nome}</strong></td>
