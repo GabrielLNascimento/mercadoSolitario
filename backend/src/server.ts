@@ -5,6 +5,7 @@ import familiasRouter from './routes/familias'
 import comprasRouter from './routes/compras'
 import dashboardRouter from './routes/dashboard'
 import entradasRouter from './routes/entradas'
+import fechamentoRouter from './routes/fechamento'
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use('/api/familias', familiasRouter)
 app.use('/api/familias/:familiaId/compras', comprasRouter)
 app.use('/api/dashboard', dashboardRouter)
 app.use('/api/entradas', entradasRouter)
+app.use('/api/fechamento', fechamentoRouter)
 
 if (process.env.VERCEL !== '1') {
   const PORT = process.env.PORT || 3333

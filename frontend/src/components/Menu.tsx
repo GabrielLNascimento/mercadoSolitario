@@ -23,6 +23,11 @@ export default function Menu() {
             Entradas
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/fechamento" className={({ isActive }) => isActive ? 'ativo' : ''}>
+            Fechamento
+          </NavLink>
+        </li>
       </ul>
     </nav>
   )

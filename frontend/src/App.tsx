@@ -12,6 +12,7 @@ import EditarProduto from './pages/EditarProduto'
 import Entradas from './pages/Entradas'
 import NovaEntrada from './pages/NovaEntrada'
 import EditarFamilia from './pages/EditarFamilia'
+import Fechamento from './pages/Fechamento'
 import './App.css'
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/estoque/:id/editar" element={<EditarProduto />} />
           <Route path="/entradas" element={<Entradas />} />
           <Route path="/entradas/nova" element={<NovaEntrada />} />
+          <Route path="/fechamento" element={<Fechamento />} />
         </Routes>
       </main>
     </div>

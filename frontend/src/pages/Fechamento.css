@@ -1,0 +1,489 @@
+.pagina-fechamento {
+  --verde: #2d6a4f;
+  --verde-escuro: #1b4332;
+  --verde-claro: #d8f3dc;
+  --vermelho: #c0392b;
+  --vermelho-claro: #fde2df;
+  --azul: #1d4e89;
+  --ambar: #b7791f;
+  max-width: 960px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
+.fech-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.fech-header h1 {
+  font-size: 1.6rem;
+  color: var(--verde);
+  margin: 0 0 0.2rem;
+}
+
+.fech-sub {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.fech-acoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.fech-btn,
+.fech-btn-sec {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.fech-btn {
+  background: var(--verde);
+  color: #fff;
+  border: 1px solid var(--verde);
+}
+
+.fech-btn:hover:not(:disabled) {
+  background: var(--verde-escuro);
+}
+
+.fech-btn-sec {
+  background: #fff;
+  color: var(--verde);
+  border: 1px solid var(--verde);
+}
+
+.fech-btn-sec:hover:not(:disabled) {
+  background: var(--verde-claro);
+}
+
+.fech-btn:disabled,
+.fech-btn-sec:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* seletor de mês */
+.fech-mes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--verde) 0%, var(--verde-escuro) 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 14px rgba(27, 67, 50, 0.25);
+}
+
+.fech-mes-nome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 220px;
+}
+
+.fech-mes-nome span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.fech-mes-nome input {
+  border: none;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  color: var(--verde-escuro);
+  background: var(--verde-claro);
+}
+
+.fech-seta {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fech-seta:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.fech-seta:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.fech-erro {
+  color: var(--vermelho);
+  background: var(--vermelho-claro);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+/* cards */
+.fech-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.fech-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid var(--cor);
+  border-radius: 10px;
+  padding: 1.1rem 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.fech-card.entrou { --cor: var(--verde); }
+.fech-card.saiu { --cor: var(--vermelho); }
+.fech-card.saldo { --cor: var(--ambar); }
+.fech-card.familias { --cor: var(--azul); }
+
+.fech-card-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #6b7280;
+}
+
+.fech-card-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cor);
+}
+
+.fech-card-det {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.fech-var {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.fech-var.sobe { color: var(--verde); }
+.fech-var.desce { color: var(--vermelho); }
+.fech-var.neutra { color: #9ca3af; font-weight: 500; }
+
+.fech-vazio {
+  background: #fff;
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* blocos */
+.fech-bloco {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.fech-bloco h2 {
+  font-size: 1.05rem;
+  color: var(--verde-escuro);
+  margin: 0 0 0.9rem;
+}
+
+.fech-bloco-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.fech-bloco-topo h2 {
+  margin: 0;
+}
+
+.fech-filtros {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.fech-filtros input,
+.fech-filtros select {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  background: #fff;
+}
+
+.fech-filtros input {
+  min-width: 220px;
+}
+
+.fech-filtros input:focus,
+.fech-filtros select:focus {
+  outline: none;
+  border-color: var(--verde);
+}
+
+/* barra entrou x saiu */
+.fech-barra {
+  display: flex;
+  height: 34px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.fech-barra > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  min-width: 0;
+  transition: width 0.5s ease;
+}
+
+.fech-barra-entrou { background: var(--verde); }
+.fech-barra-saiu { background: var(--vermelho); }
+
+.fech-legenda {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.ponto {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+.ponto.entrou { background: var(--verde); }
+.ponto.saiu { background: var(--vermelho); }
+
+/* categorias */
+.fech-cats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fech-cat {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.fech-cat-nome {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fech-cat-barras {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fech-cat-linha {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.fech-cat-b {
+  height: 10px;
+  border-radius: 5px;
+  min-width: 2px;
+  transition: width 0.5s ease;
+}
+
+.fech-cat-b.entrou { background: var(--verde); }
+.fech-cat-b.saiu { background: var(--vermelho); }
+
+/* tabelas */
+.fech-tabela-wrap {
+  overflow-x: auto;
+}
+
+.fech-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.fech-tabela th {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  padding: 0.55rem 0.6rem;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.fech-tabela td {
+  padding: 0.6rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.fech-tabela tbody tr:hover {
+  background: #f9fafb;
+}
+
+.fech-tabela .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.fech-tabela td.entrou { color: var(--verde); font-weight: 700; }
+.fech-tabela td.saiu { color: var(--vermelho); font-weight: 700; }
+.fech-tabela td.pos { color: #374151; }
+.fech-tabela td.neg { color: var(--vermelho); }
+
+.fech-prod {
+  display: block;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.fech-prod-cat {
+  display: block;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.fech-tabela tfoot td {
+  font-weight: 800;
+  border-top: 2px solid #e5e7eb;
+  border-bottom: none;
+  background: #f9fafb;
+}
+
+.fech-nenhum {
+  text-align: center;
+  color: #9ca3af;
+}
+
+.fech-nota {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin: 0.5rem 0 0;
+}
+
+@media (max-width: 800px) {
+  .fech-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .fech-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .fech-cat {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .fech-filtros input {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .fech-mes-nome {
+    min-width: 0;
+  }
+
+  .fech-mes-nome span {
+    font-size: 1.15rem;
+  }
+}
+
+@media print {
+  .menu,
+  .nao-imprimir {
+    display: none !important;
+  }
+
+  body,
+  .app {
+    background: #fff;
+  }
+
+  .pagina-fechamento {
+    margin: 0;
+    max-width: none;
+  }
+
+  .fech-mes {
+    background: none;
+    color: var(--verde-escuro);
+    box-shadow: none;
+    border: 2px solid var(--verde);
+    padding: 0.5rem;
+  }
+
+  .fech-bloco,
+  .fech-card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .fech-barra > div,
+  .fech-cat-b,
+  .ponto {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
